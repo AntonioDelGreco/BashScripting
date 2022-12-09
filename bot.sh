@@ -10,15 +10,15 @@ mostrarHora(){
 	hora=$(date "+%H")
 	minutos=$(date "+%M")
 
-	if [[ $hora -gt 12 && $minutos -gt 0 ]]
-	then
+  if [[ $hora -gt 12 ]]
+  then
+    echo En este momento son las $(date "+%I:%M") PM.
+  elif [[ $hora -eq 12 && $munitos -gt 0 ]]
+  then
 		echo En este momento son las $(date "+%I:%M") PM.
-	elif [[ $hora -gt 12 ]]
-	then
-		echo En este momento son las $(date "+%I:%M") PM.
-	else	
+  else	
 		echo En este momento son las $(date "+%I:%M") AM.
-	fi
+  fi
 }
 
 echo -e "\nBuen dia, $SUDO_USER!"
